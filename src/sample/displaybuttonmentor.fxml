@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.displaymentor">
+   <children>
+      <TableView fx:id="tableView" layoutX="223.0" layoutY="45.0" prefHeight="253.0" prefWidth="171.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="206.0" AnchorPane.topAnchor="45.0" />
+   </children>
+</AnchorPane>

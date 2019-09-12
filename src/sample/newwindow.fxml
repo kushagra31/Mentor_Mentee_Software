@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="mycontainer1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newwindowcontroller">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="622.0" minWidth="10.0" prefWidth="280.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="738.0" minWidth="0.0" prefWidth="0.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="421.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="421.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="421.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="421.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+              <Button fx:id="creatbutton" layoutX="425.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="88.0" text="C" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Button>
+              <Button fx:id="mentebutton" layoutX="575.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="88.0" text="D" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="delete" layoutX="875.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="88.0" text="D" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="allocate" layoutX="725.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="88.0" text="A" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Label layoutX="889.0" layoutY="657.0" text="Delete" />
+            <Label layoutX="737.0" layoutY="657.0" text="Allocate" />
+            <Label layoutX="589.0" layoutY="657.0" text="Display" />
+            <Label layoutX="440.0" layoutY="657.0" text="Create" />
+            <Button fx:id="delete1" layoutX="1025.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="88.0" text="U" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="1035.0" layoutY="657.0" text="Update" />
+         </children>
+      </AnchorPane>
+    </children>
+</GridPane>

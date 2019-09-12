@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apane" prefHeight="504.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newwindow1controller">
+    <children>
+        <Pane layoutX="436.0" layoutY="186.0" prefHeight="375.0" prefWidth="399.0">
+            <children>
+                <Label layoutX="134.0" layoutY="60.0" text="Name" />
+                <Label layoutX="139.0" layoutY="111.0" text="PRN" />
+                <TextField fx:id="Marks" layoutX="181.0" layoutY="225.0" />
+                <TextField fx:id="PRN" layoutX="181.0" layoutY="105.0" />
+                <TextField fx:id="Name" layoutX="181.0" layoutY="55.0" />
+                <Label layoutX="106.0" layoutY="229.0" text="Attendence" />
+                <Button fx:id="subbutton" layoutX="221.0" layoutY="290.0" mnemonicParsing="false" text="S" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="PRN1" layoutX="181.0" layoutY="165.0" />
+            <Label layoutX="125.0" layoutY="170.0" text="Email Id" />
+            <Label layoutX="236.0" layoutY="340.0" text="Submit" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

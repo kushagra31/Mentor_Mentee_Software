@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="javafx12:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javafx12_jar</output-path>
+    <root id="archive" name="javafx12.jar">
+      <element id="module-output" name="javafx12" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../sqlite-jdbc-3.27.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="library" level="application" name="javafx-swt" />
+      <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.15.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../../sqlite-jdbc-3.27.2.1.jar" />
+    </root>
+  </artifact>
+</component>

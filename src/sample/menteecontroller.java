@@ -1,0 +1,216 @@
+package sample;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.Event;
+import javafx.fxml.Initializable;
+import javafx.geometry.VPos;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
+
+import javax.swing.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+import static java.lang.String.valueOf;
+
+public class menteecontroller implements Initializable {
+	public ComboBox choiceboxyear;
+	public ComboBox comboboxname;
+	public Button showbutton;
+	public TableView tableView;
+	public AnchorPane mycontainer2;
+	private ObservableList<ObservableList> data;
+	private ObservableList<ObservableList> data1;
+	FileInputStream input = new FileInputStream("E:\\bw.jpg");
+	Image image = new Image(input);
+
+	public menteecontroller() throws FileNotFoundException {
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		choiceboxyear.getItems().add("AS");
+		choiceboxyear.getItems().add("SY");
+		choiceboxyear.getItems().add("TY");
+		choiceboxyear.getItems().add("FY");
+		comboboxname.getItems().add("Meeta Kumar");
+		comboboxname.getItems().add("Rupali");
+		comboboxname.getItems().add("Shruti Patil");
+		comboboxname.setPromptText("Select Mentor");
+		choiceboxyear.setPromptText("Select Year");
+
+
+		BackgroundSize backgroundSize= new BackgroundSize(1.0,1.0,false,false,false,true);
+		BackgroundImage myBI= new BackgroundImage(image,
+				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+				backgroundSize);
+		mycontainer2.setBackground(new Background(myBI));
+
+		showbutton.setOnAction(event -> {
+
+            tableView.getItems().clear();
+			tableView.getColumns().clear();
+			String value = (String) choiceboxyear.getValue();
+			String value1 = (String) comboboxname.getValue();
+
+			if(value.equals("SY")&& value1.equals("Meeta Kumar")) {
+
+				data = FXCollections.observableArrayList();
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mentee1", "root", "ravi97292");
+					Statement smt = cn.createStatement();
+					String q = "Select * from users where idmentor= '1'";
+
+
+					ResultSet rs = smt.executeQuery(q);
+					for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+
+						final int j = i;
+						TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
+						col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
+							public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
+								return new SimpleStringProperty(param.getValue().get(j).toString());
+							}
+						});
+
+						tableView.getColumns().addAll(col);
+						System.out.println("Column [" + i + "] ");
+					}
+
+
+					while (rs.next()) {
+						ObservableList<String> row = FXCollections.observableArrayList();
+						for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+
+							row.add(rs.getString(i));
+						}
+						System.out.println("Row [1] added " + row);
+						data.add(row);
+					}
+					tableView.setItems(data);
+
+					cn.close();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+
+			}
+
+			if(value.equals("SY")&& value1.equals("Rupali")){
+
+				data1 = FXCollections.observableArrayList();
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+
+
+					Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mentee1", "root", "ravi97292");
+
+					Statement smt = cn.createStatement();
+
+					Scanner KB = new Scanner(System.in);
+
+
+					String q = "Select * from users where idmentor ='2'";
+
+
+					ResultSet rs1 = smt.executeQuery(q);
+					for (int i = 0; i < rs1.getMetaData().getColumnCount(); i++) {
+
+						final int j = i;
+						TableColumn col1 = new TableColumn(rs1.getMetaData().getColumnName(i + 1));
+						col1.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param1 -> {
+							return new SimpleStringProperty(param1.getValue().get(j).toString());
+						});
+
+
+						tableView.getColumns().addAll(col1);
+						System.out.println("Column [" + i + "] ");
+					}
+
+
+					while (rs1.next()) {
+						ObservableList<String> row1 = FXCollections.observableArrayList();
+						for (int i = 1; i <= rs1.getMetaData().getColumnCount(); i++) {
+
+							row1.add(rs1.getString(i));
+						}
+						System.out.println("Row [1] added " + row1);
+						data1.add(row1);
+					}
+					tableView.setItems(data1);
+
+					cn.close();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+
+			}
+			if(value.equals("SY")&& value1.equals("Shruti Patil")){
+
+				data1 = FXCollections.observableArrayList();
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+
+
+					Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mentee1", "root", "ravi97292");
+
+					Statement smt = cn.createStatement();
+
+					Scanner KB = new Scanner(System.in);
+
+
+					String q = "Select * from users where idmentor ='3'";
+
+
+					ResultSet rs1 = smt.executeQuery(q);
+					for (int i = 0; i < rs1.getMetaData().getColumnCount(); i++) {
+
+						final int j = i;
+						TableColumn col1 = new TableColumn(rs1.getMetaData().getColumnName(i + 1));
+						col1.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param1 -> {
+							return new SimpleStringProperty(param1.getValue().get(j).toString());
+						});
+
+
+						tableView.getColumns().addAll(col1);
+						System.out.println("Column [" + i + "] ");
+					}
+
+
+					while (rs1.next()) {
+						ObservableList<String> row1 = FXCollections.observableArrayList();
+						for (int i = 1; i <= rs1.getMetaData().getColumnCount(); i++) {
+
+							row1.add(rs1.getString(i));
+						}
+						System.out.println("Row [1] added " + row1);
+						data1.add(row1);
+					}
+					tableView.setItems(data1);
+
+					cn.close();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+
+			}
+		});
+
+
+	}
+}
